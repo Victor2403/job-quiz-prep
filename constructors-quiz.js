@@ -49,73 +49,74 @@ const quizData = [
       ],
       answer: 3
     }
-];
-
-const quizContainer = document.getElementById("quiz-container");
-const submitBtn = document.getElementById("submit-btn");
-const resultsContainer = document.getElementById("results");
-const actionsContainer = document.getElementById("actions");
-
-function loadQuiz() {
-  quizContainer.innerHTML = "";
-  quizData.forEach((q, index) => {
-    const questionDiv = document.createElement("div");
-    questionDiv.classList.add("question");
-
-    const questionText = document.createElement("p");
-    questionText.textContent = `${index + 1}. ${q.question}`;
-    questionDiv.appendChild(questionText);
-
-    q.options.forEach((option, i) => {
-      const label = document.createElement("label");
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name = `question${index}`;
-      input.value = i;
-      label.appendChild(input);
-      label.appendChild(document.createTextNode(option));
-      questionDiv.appendChild(label);
-      questionDiv.appendChild(document.createElement("br"));
-    });
-
-    quizContainer.appendChild(questionDiv);
-  });
-}
-
-function calculateScore() {
+  ];
+  
+  let currentQuiz = 0;
   let score = 0;
-  quizData.forEach((q, index) => {
-    const selected = document.querySelector(`input[name='question${index}']:checked`);
-    if (selected && parseInt(selected.value) === q.answer) {
+  
+  function startQuiz() {
+    document.getElementById("results").classList.add("hidden");
+    document.getElementById("actions").classList.add("hidden");
+    document.getElementById("quiz-container").innerHTML = "";
+    document.getElementById("submit-btn").classList.remove("hidden");
+    currentQuiz = 0;
+    score = 0;
+    loadQuestion();
+  }
+  
+  function loadQuestion() {
+    const quizContainer = document.getElementById("quiz-container");
+    if (currentQuiz >= quizData.length) {
+      showResults();
+      return;
+    }
+  
+    const questionObj = quizData[currentQuiz];
+    const questionEl = document.createElement("div");
+    questionEl.classList.add("question");
+    questionEl.innerHTML = `
+      <h2>${questionObj.question}</h2>
+      ${questionObj.options.map((opt, i) => `
+        <button onclick="submitAnswer(${i})">${opt}</button>
+      `).join("")}
+    `;
+  
+    quizContainer.innerHTML = "";
+    quizContainer.appendChild(questionEl);
+  }
+  
+  function submitAnswer(selectedIndex) {
+    if (selectedIndex === quizData[currentQuiz].answer) {
       score++;
     }
-  });
-  return score;
-}
-
-function displayResults() {
-  const score = calculateScore();
-  const totalQuestions = quizData.length;
-  const percent = ((score / totalQuestions) * 100).toFixed(2);
+    currentQuiz++;
+    loadQuestion();
+  }
   
-  resultsContainer.innerHTML = `
-    <p>You scored ${score}/${totalQuestions} (${percent}%)</p>
-    <p>Score as a fraction: ${score}/${totalQuestions}</p>
-  `;
-  resultsContainer.classList.remove("hidden");
-  actionsContainer.classList.remove("hidden");
-  submitBtn.classList.add("hidden");
-}
-
-submitBtn.addEventListener("click", displayResults);
-
-// Action buttons for taking the quiz again or returning to home screen
-function returnToHome() {
-  window.location.href = "index.html"; // Change to your home page URL
-}
-
-function takeAgain() {
-  window.location.reload(); // Reloads the quiz page to start over
-}
-
-loadQuiz();
+  function showResults() {
+    const total = quizData.length;
+    const percentage = ((score / total) * 100).toFixed(2);
+    const results = document.getElementById("results");
+  
+    results.innerHTML = `
+      <p>You scored ${score} / ${total} (${percentage}%)</p>
+      <p>Score as a fraction: ${score}/${total}</p>
+    `;
+    results.classList.remove("hidden");
+    document.getElementById("actions").classList.remove("hidden");
+    document.getElementById("submit-btn").classList.add("hidden");
+  }
+  
+  // Action buttons
+  function returnToHome() {
+    window.location.href = "index.html"; // Update as needed
+  }
+  
+  function takeAgain() {
+    startQuiz();
+  }
+  
+  // Initialize on page load
+  if (document.getElementById("quiz-container")) {
+    startQuiz();
+  }  

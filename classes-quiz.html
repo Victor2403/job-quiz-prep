@@ -4,21 +4,27 @@
   <meta charset="UTF-8">
   <title>Classes and Objects Quiz</title>
   <link rel="stylesheet" href="style.css">
+  <script src="classes-quiz.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Classes and Objects Quiz</h1>
   </header>
 
-  <main id="quiz-container"></main>
+  <main>
+    <div id="quiz-container"></div>
 
-  <div id="results" class="hidden">
-    <h2>Your Score:</h2>
-    <p id="score"></p>
-    <button onclick="startQuiz()">Take Again</button>
-    <a href="index.html"><button>Return to Home Screen</button></a>
-  </div>
+    <button id="submit-btn">Submit Quiz</button>
 
-  <script src="script.js"></script>
+    <div id="results" class="hidden">
+      <h2>Your Score:</h2>
+      <p id="score"></p>
+    </div>
+
+    <div id="actions" class="hidden">
+      <button onclick="takeAgain()">Take Again</button>
+      <button onclick="returnToHome()">Return to Home Screen</button>
+    </div>
+  </main>
 </body>
 </html>
