@@ -1,0 +1,95 @@
+const quizData = [
+    // QUESTION 1
+    {
+      question: "1. [Your question here]",
+      options: [
+        "A) [Option 1]",
+        "B) [Option 2]", 
+        "C) [Option 3]",
+        "D) [Option 4]"
+      ],
+      answer: [correctIndex] // 0-3
+    },
+    // QUESTION 2
+    {
+      question: `2. [Multi-line question if needed]`,
+      options: [
+        "A) [Option 1]",
+        "B) [Option 2]",
+        "C) [Option 3]",
+        "D) [Option 4]"
+      ],
+      answer: [correctIndex]
+    }
+    // Add more questions as needed
+];
+
+let currentQuiz = 0;
+let score = 0;
+
+// ============== DO NOT MODIFY BELOW THIS LINE ==============
+// (This ensures all quizzes behave identically)
+
+function startQuiz() {
+    document.getElementById("results").classList.add("hidden");
+    document.getElementById("actions").classList.add("hidden");
+    document.getElementById("quiz-container").innerHTML = "";
+    currentQuiz = 0;
+    score = 0;
+    loadQuestion();
+}
+
+function loadQuestion() {
+    const quizContainer = document.getElementById("quiz-container");
+    if (currentQuiz >= quizData.length) {
+        showResults();
+        return;
+    }
+
+    const questionObj = quizData[currentQuiz];
+    const questionEl = document.createElement("div");
+    questionEl.classList.add("question");
+    questionEl.innerHTML = `
+        <h2>${questionObj.question}</h2>
+        <div class="options">
+            ${questionObj.options.map((opt, i) => `
+                <button onclick="submitAnswer(${i})">${opt}</button>
+            `).join("")}
+        </div>
+    `;
+
+    quizContainer.innerHTML = "";
+    quizContainer.appendChild(questionEl);
+}
+
+function submitAnswer(selectedIndex) {
+    if (selectedIndex === quizData[currentQuiz].answer) {
+        score++;
+    }
+    currentQuiz++;
+    loadQuestion();
+}
+
+function showResults() {
+    const total = quizData.length;
+    const percentage = ((score / total) * 100).toFixed(2);
+    const results = document.getElementById("results");
+
+    results.innerHTML = `
+        <h3>Quiz Results</h3>
+        <p>You scored ${score} out of ${total} (${percentage}%)</p>
+    `;
+    results.classList.remove("hidden");
+    document.getElementById("actions").classList.remove("hidden");
+}
+
+function returnToHome() {
+    window.location.href = "index.html";
+}
+
+function takeAgain() {
+    startQuiz();
+}
+
+// Initialize quiz
+startQuiz();
