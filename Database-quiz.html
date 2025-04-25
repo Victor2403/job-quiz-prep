@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            color: #333;
+        }
+        .question {
+            background: #fff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .options button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 15px;
+            width: 100%;
+            border: none;
+            background: #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .options button:hover {
+            background: #c2dbf0;
+        }
+        #results, #actions {
+            display: none;
+            margin-top: 30px;
+        }
+        #matching-container {
+            margin-top: 30px;
+        }
+        .match-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .match-line {
+            height: 3px;
+            background: linear-gradient(to right, #00f, #00c6ff);
+            margin: 10px 0;
+        }
+        .select {
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1>SQL/Database Quiz</h1>
+    <div id="quiz-container"></div>
+
+    <div id="matching-container" class="question"></div>
+
+    <div id="results"></div>
+
+    <div id="actions">
+        <button onclick="takeAgain()">Take Again</button>
+        <button onclick="returnToHome()">Return Home</button>
+    </div>
+
+    <script src="Database-quiz.js"></script>
+</body>
+</html>

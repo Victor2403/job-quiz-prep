@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Knowledge Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question {
+            background: #fff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .options button {
+            display: block;
+            margin: 10px 0;
+            padding: 12px 15px;
+            width: 100%;
+            border: none;
+            background: #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .options button:hover {
+            background: #c2dbf0;
+            transform: translateX(5px);
+        }
+        #results, #actions {
+            display: none;
+            margin-top: 30px;
+            text-align: center;
+        }
+        #matching-container {
+            margin-top: 30px;
+        }
+        .match-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: center;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+        }
+        .match-line {
+            height: 3px;
+            background: linear-gradient(to right, #00f, #00c6ff);
+            margin: 10px 0;
+        }
+        .select {
+            width: 60%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        #actions button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #actions button:hover {
+            background: #45a049;
+        }
+        #results h3 {
+            color: #2c3e50;
+            font-size: 24px;
+        }
+        #results p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Knowledge Quiz</h1>
+    <div id="quiz-container"></div>
+
+    <div id="matching-container" class="question"></div>
+
+    <div id="results"></div>
+
+    <div id="actions">
+        <button onclick="takeAgain()">Take Again</button>
+        <button onclick="returnToHome()">Return Home</button>
+    </div>
+
+    <script src="HTML-quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+// Database.quiz.js - Wrapper with only questions portion
+
+const quizData = [
+    // Add your modified questions here following this format:
+    /*
+    {
+        question: "Your question text here",
+        options: [
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4"
+        ],
+        answer: indexOfCorrectAnswer // 0-based index
+    },
+    */
+];
+
+// Rest of the quiz functionality remains the same
+let currentQuiz = 0;
+let score = 0;
+
+function startQuiz() {
+    document.getElementById("results").style.display = "none";
+    document.getElementById("actions").style.display = "none";
+    document.getElementById("quiz-container").innerHTML = "";
+    currentQuiz = 0;
+    score = 0;
+    loadQuestion();
+}
+
+function loadQuestion() {
+    const quizContainer = document.getElementById("quiz-container");
+    if (currentQuiz >= quizData.length) {
+        renderMatchingSection();
+        return;
+    }
+
+    const questionObj = quizData[currentQuiz];
+    const questionEl = document.createElement("div");
+    questionEl.classList.add("question");
+    questionEl.innerHTML = `
+        <h2>${questionObj.question}</h2>
+        <div class="options">
+            ${questionObj.options.map((opt, i) => `
+                <button onclick="submitAnswer(${i})">${opt}</button>
+            `).join("")}
+        </div>
+    `;
+
+    quizContainer.innerHTML = "";
+    quizContainer.appendChild(questionEl);
+}
+
+function submitAnswer(selectedIndex) {
+    if (selectedIndex === quizData[currentQuiz].answer) {
+        score++;
+    }
+    currentQuiz++;
+    loadQuestion();
+}
+
+function renderMatchingSection() {
+    const container = document.getElementById("matching-container");
+    container.innerHTML = `<h2>Matching Section</h2>`;
+    const keywordList = matchingData.keywords;
+    const descriptionList = matchingData.descriptions;
+
+    keywordList.forEach((keyword, i) => {
+        const row = document.createElement("div");
+        row.classList.add("match-item");
+
+        row.innerHTML = `
+            <div>${keyword}</div>
+            <select class="select" data-index="${i}">
+                <option value="">-- Match --</option>
+                ${descriptionList.map((desc, idx) => `<option value="${idx}">${desc}</option>`).join("")}
+            </select>
+        `;
+        container.appendChild(row);
+    });
+
+    const submitBtn = document.createElement("button");
+    submitBtn.textContent = "Submit Matching Answers";
+    submitBtn.onclick = submitMatchingAnswers;
+    container.appendChild(submitBtn);
+}
+
+function submitMatchingAnswers() {
+    const selects = document.querySelectorAll("#matching-container select");
+    let matchScore = 0;
+
+    selects.forEach(select => {
+        const keywordIndex = parseInt(select.dataset.index);
+        const selectedValue = parseInt(select.value);
+        if (selectedValue === matchingData.correctMatches[keywordIndex]) {
+            matchScore++;
+        }
+    });
+
+    score += matchScore;
+    showResults();
+}
+
+function showResults() {
+    const total = quizData.length + matchingData.keywords.length;
+    const percentage = ((score / total) * 100).toFixed(2);
+    const results = document.getElementById("results");
+
+    results.innerHTML = `
+        <h3>Quiz Results</h3>
+        <p>You scored ${score} out of ${total} (${percentage}%)</p>
+    `;
+    results.style.display = "block";
+    document.getElementById("actions").style.display = "block";
+}
+
+function returnToHome() {
+    window.location.href = "index.html";
+}
+
+function takeAgain() {
+    startQuiz();
+}
+
+// You'll need to add your matchingData object if you want to keep the matching section
+const matchingData = {
+    keywords: [],
+    descriptions: [],
+    correctMatches: []
+};
+
+startQuiz();

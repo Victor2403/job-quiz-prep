@@ -30,7 +30,6 @@ header {
   gap: 2rem;
   padding: 2rem;
 }
-
 .quiz-card {
   background: linear-gradient(135deg, #1a5f3e 0%, #2f855a 100%);
   padding: 2rem;
@@ -53,8 +52,32 @@ header {
   background: linear-gradient(135deg, #1a5f3e 0%, #3a9b6b 100%);
 }
 
-/* Subtle shine effect on hover */
-.quiz-card::after {
+/* New Blue Card */
+.quiz-card2 {
+  background: linear-gradient(135deg, #0d324d 0%, #1a5276 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-family: 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-card2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #0d324d 0%, #2874a6 100%);
+}
+
+/* Shared Hover Effects */
+.quiz-card::after,
+.quiz-card2::after {
   content: '';
   position: absolute;
   top: -50%;
@@ -74,7 +97,8 @@ header {
   opacity: 0;
 }
 
-.quiz-card:hover::after {
+.quiz-card:hover::after,
+.quiz-card2:hover::after {
   opacity: 1;
   top: -30%;
   left: -30%;

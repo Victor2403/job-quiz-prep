@@ -1,0 +1,100 @@
+Multiple Choice Questions
+1. What does HTML stand for?
+A) Hyperlinks and Text Markup Language
+B) Hyper Text Markup Language
+C) Home Tool Markup Language
+D) Hyper Transfer Markup Language
+
+(Correct Answer: B) Hyper Text Markup Language)
+
+2. Which HTML element is used to define a paragraph?
+A) <para>
+B) <p>
+C) <paragraph>
+D) <text>
+
+(Correct Answer: B) <p>)
+
+3. What is the correct HTML element for inserting a line break?
+A) <break>
+B) <lb>
+C) <br>
+D) <newline>
+
+(Correct Answer: C) <br>)
+
+4. Which HTML attribute specifies an alternate text for an image if the image cannot be displayed?
+A) title
+B) src
+C) alt
+D) href
+
+(Correct Answer: C) alt)
+
+5. Which HTML element is used to define the structure of an HTML document (root element)?
+A) <head>
+B) <body>
+C) <html>
+D) <!DOCTYPE>
+
+(Correct Answer: C) <html>)
+
+6. What is the correct HTML for creating a hyperlink?
+A) <a url="https://example.com">Example</a>
+B) <a href="https://example.com">Example</a>
+C) <link>https://example.com</link>
+D) <a>https://example.com</a>
+
+(Correct Answer: B) <a href="https://example.com">Example</a>)
+
+7. Which HTML tag is used to define an unordered list?
+A) <list>
+B) <ol>
+C) <ul>
+D) <li>
+
+(Correct Answer: C) <ul>)
+
+Matching Section
+Match each HTML tag with its correct description.
+
+HTML Tag	Description
+1. <h1>	A) Defines a paragraph
+2. <img>	B) Defines the most important heading
+3. <a>	C) Inserts an image
+4. <p>	D) Creates a hyperlink
+5. <ol>	E) Defines an ordered list
+(Correct Answers: 1-B, 2-C, 3-D, 4-A, 5-E)
+
+Bonus Questions
+8. Which HTML element is used to define the title of a document?
+A) <meta>
+B) <title>
+C) <head>
+D) <header>
+
+(Correct Answer: B) <title>)
+
+9. What is the correct HTML for adding a background color?
+A) <body bgcolor="yellow">
+B) <body style="background-color:yellow;">
+C) <background>yellow</background>
+D) <body color="yellow">
+
+(Correct Answer: B) <body style="background-color:yellow;">)
+
+10. Which HTML element is used to define table data?
+A) <td>
+B) <tr>
+C) <table>
+D) <th>
+
+(Correct Answer: A) <td>)
+
+11. What is the correct HTML for creating a checkbox?
+A) <input type="check">
+B) <checkbox>
+C) <input type="checkbox">
+D) <check>
+
+(Correct Answer: C) <input type="checkbox">)
