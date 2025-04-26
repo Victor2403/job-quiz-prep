@@ -1,6 +1,4 @@
 # job-quiz-prep
-Absolutely! Here's the full `README.md` content in a single code block so you can copy and paste it directly:
-
 ```markdown
 # Job Quiz Prep
 
