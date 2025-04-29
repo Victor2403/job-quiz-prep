@@ -4,7 +4,7 @@ const quizData = [
       options: [
         "To hide implementation details",
         "To achieve method overloading",
-        "To reuse code and establish an IS-A relationship",
+        "To reuse code and establish an IS-A relationship", // ANS
         "To improve runtime performance"
       ],
       answer: 2
@@ -47,7 +47,7 @@ const quizData = [
     {
       question: "Which of the following is an example of hierarchical inheritance?",
       options: [
-        "A class Car extending Vehicle, and Bike also extending Vehicle",
+        "A class Car extending Vehicle, and Bike also extending Vehicle", // ANS
         "A class Car extending Vehicle, and SportsCar extending Car",
         "A class Car implementing both Drivable and FuelEfficient interfaces",
         "A class Car extending two different classes"
@@ -59,7 +59,7 @@ const quizData = [
       options: [
         "It prints \"A\"",
         "It prints \"B\"",
-        "Compilation error (multiple inheritance not allowed)",
+        "Compilation error (multiple inheritance not allowed)", // ANS
         "Runtime error"
       ],
       answer: 2
@@ -69,7 +69,7 @@ const quizData = [
       options: [
         "Code reusability",
         "Method overriding for runtime polymorphism",
-        "Reduced memory usage",
+        "Reduced memory usage", // ANS
         "Better organization of classes in an IS-A hierarchy"
       ],
       answer: 2

@@ -3,7 +3,7 @@ const quizData = [
       question: "1. What is the primary purpose of encapsulation in Java?",
       options: [
         "A) To allow multiple inheritance",
-        "B) To wrap data and methods into a single unit and control access to them",
+        "B) To wrap data and methods into a single unit and control access to them", // ANS
         "C) To improve runtime performance",
         "D) To enable method overloading"
       ],
@@ -13,7 +13,7 @@ const quizData = [
       question: "2. How do you achieve full encapsulation in a Java class?",
       options: [
         "A) Make all data members public",
-        "B) Make all data members private and provide getters/setters",
+        "B) Make all data members private and provide getters/setters", // ANS
         "C) Use only static methods",
         "D) Declare the class as final"
       ],
@@ -36,7 +36,7 @@ const quizData = [
   }</pre>`,
       options: [
         "A) null",
-        "B) Alice",
+        "B) Alice", // ANS
         "C) Compilation error (missing constructor)",
         "D) Runtime error"
       ],
@@ -47,7 +47,7 @@ const quizData = [
       options: [
         "A) A class with only private fields",
         "B) A class with only getter methods",
-        "C) A class with only setter methods",
+        "C) A class with only setter methods", // ANS
         "D) A class with public fields"
       ],
       answer: 2
@@ -55,7 +55,7 @@ const quizData = [
     {
       question: "5. Why is encapsulation important for data hiding?",
       options: [
-        "A) It prevents other classes from accessing private data directly",
+        "A) It prevents other classes from accessing private data directly", // ANS
         "B) It allows unrestricted access to all fields",
         "C) It makes all methods static",
         "D) It enforces multiple inheritance"
@@ -66,7 +66,7 @@ const quizData = [
       question: "6. What happens if you try to override a protected method with a default (package-private) method in a subclass?",
       options: [
         "A) It works fine because both are similar",
-        "B) Compilation error (cannot weaken access privileges)",
+        "B) Compilation error (cannot weaken access privileges)", // ANS
         "C) Runtime error",
         "D) The subclass method becomes public automatically"
       ],
@@ -76,7 +76,7 @@ const quizData = [
       question: "7. Which access modifier allows visibility only within the same package?",
       options: [
         "A) private",
-        "B) default (no modifier)",
+        "B) default (no modifier)", // ANS
         "C) protected",
         "D) public"
       ],
@@ -86,7 +86,7 @@ const quizData = [
       question: "8. What is the advantage of using getters/setters instead of public fields?",
       options: [
         "A) To allow direct modification of fields",
-        "B) To add validation logic (e.g., reject negative values)",
+        "B) To add validation logic (e.g., reject negative values)", // ANS
         "C) To make the class immutable",
         "D) To avoid inheritance"
       ],
@@ -97,7 +97,7 @@ const quizData = [
       options: [
         "A) Using private fields with getters/setters",
         "B) Declaring a class as final",
-        "C) Making all fields public and not using methods",
+        "C) Making all fields public and not using methods", // ANS
         "D) Overriding a method with the same access modifier"
       ],
       answer: 2

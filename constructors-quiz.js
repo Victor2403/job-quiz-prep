@@ -2,7 +2,7 @@ const quizData = [
     {
       question: "What is a constructor in Java?",
       options: [
-        "A special method used to initialize an object",
+        "A special method used to initialize an object", // ANS
         "A function to destroy objects",
         "A static method to run at program start",
         "A return type for classes"
@@ -14,7 +14,7 @@ const quizData = [
       options: [
         "When a method is executed",
         "Only when the compiler finds an error",
-        "At the time of object creation",
+        "At the time of object creation", // ANS
         "At the end of the program"
       ],
       answer: 2
@@ -24,7 +24,7 @@ const quizData = [
       options: [
         "A constructor can be static",
         "A constructor must have a return type",
-        "Constructor name must match the class name",
+        "Constructor name must match the class name", // ANS
         "A constructor can be abstract"
       ],
       answer: 2
@@ -33,7 +33,7 @@ const quizData = [
       question: "What is constructor overloading?",
       options: [
         "Having a constructor and a method with the same name",
-        "Creating multiple constructors with different parameter lists",
+        "Creating multiple constructors with different parameter lists",  // ANS
         "Using inheritance with constructors",
         "A constructor calling a method"
       ],
@@ -45,7 +45,7 @@ const quizData = [
         "A method is used to initialize the object; a constructor defines behavior",
         "A constructor must have a return type; a method must not",
         "A method is invoked implicitly; a constructor is invoked explicitly",
-        "A constructor initializes state; a method defines behavior"
+        "A constructor initializes state; a method defines behavior" // ANS 
       ],
       answer: 3
     }

@@ -3,7 +3,7 @@ const quizData = [
     question: "1. What is Polymorphism in Java?",
     options: [
       "A) The ability of a class to inherit from multiple superclasses",
-      "B) The ability of an object to take on many forms, often through inheritance and interfaces",
+      "B) The ability of an object to take on many forms, often through inheritance and interfaces", // ANS
       "C) The process of converting data types implicitly",
       "D) A feature that allows a class to have multiple constructors"
     ],
@@ -14,7 +14,7 @@ const quizData = [
     options: [
       "A) It requires methods to have different names",
       "B) It is done by changing the method's return type alone",
-      "C) It can be achieved by changing the number or type of parameters",
+      "C) It can be achieved by changing the number or type of parameters", // ANS
       "D) It only works with static methods"
     ],
     answer: 2
@@ -32,7 +32,7 @@ public class Test {
     }
 }</pre>`,
     options: [
-      "A) 10 followed by 12.0",
+      "A) 10 followed by 12.0", // ANS
       "B) 10 followed by 12",
       "C) Compilation error (ambiguous method call)",
       "D) Runtime error"
@@ -42,7 +42,7 @@ public class Test {
   {
     question: "4. Which scenario demonstrates method overriding?",
     options: [
-      "A) A subclass defining a method with the same name and parameters as its superclass",
+      "A) A subclass defining a method with the same name and parameters as its superclass", // ANS
       "B) A class having multiple methods with the same name but different parameters",
       "C) A static method being redefined in a subclass",
       "D) A private method in a superclass being reused in a subclass"
@@ -53,7 +53,7 @@ public class Test {
     question: "5. Why can't static methods be overridden?",
     options: [
       "A) Because they are implicitly final",
-      "B) Because they belong to the class, not instances",
+      "B) Because they belong to the class, not instances", // ANS
       "C) Because Java does not allow methods in subclasses to have the same name as superclass methods",
       "D) Because they are always private"
     ],
@@ -75,7 +75,7 @@ public class Test {
 }</pre>`,
     options: [
       "A) Parent",
-      "B) Child",
+      "B) Child", // ANS
       "C) Compilation error",
       "D) Runtime error"
     ],
@@ -86,7 +86,7 @@ public class Test {
     options: [
       "A) The method must have the same name as in the parent class",
       "B) The method must have the same return type (or a covariant type)",
-      "C) The method must have a different number of parameters",
+      "C) The method must have a different number of parameters", // ANS
       "D) There must be an IS-A relationship (inheritance)"
     ],
     answer: 2
@@ -95,7 +95,7 @@ public class Test {
     question: "8. Can the main() method be overloaded in Java?",
     options: [
       "A) No, it is a reserved method",
-      "B) Yes, but the JVM only calls the standard main(String[] args) version",
+      "B) Yes, but the JVM only calls the standard main(String[] args) version", // ANS
       "C) Only if it is declared final",
       "D) Only in abstract classes"
     ],
@@ -104,7 +104,7 @@ public class Test {
   {
     question: "9. What is the key difference between method overloading and overriding?",
     options: [
-      "A) Overloading occurs in the same class, while overriding requires inheritance",
+      "A) Overloading occurs in the same class, while overriding requires inheritance", // ANS
       "B) Overriding changes the method's parameters, while overloading does not",
       "C) Overloading is runtime polymorphism, while overriding is compile-time polymorphism",
       "D) Overriding only works with static methods"

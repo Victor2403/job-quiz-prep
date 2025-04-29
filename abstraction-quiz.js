@@ -2,7 +2,7 @@ const quizData = [
     {
       question: "1. What is the primary purpose of abstraction in Java?",
       options: [
-        "A) To hide implementation details and show only essential features",
+        "A) To hide implementation details and show only essential features", // ANS
         "B) To allow multiple inheritance",
         "C) To improve runtime performance",
         "D) To make all methods final"
@@ -13,7 +13,7 @@ const quizData = [
       question: "2. Which keyword is used to declare an abstract class in Java?",
       options: [
         "A) interface",
-        "B) abstract",
+        "B) abstract", // ANS
         "C) extends",
         "D) implements"
       ],
@@ -24,7 +24,7 @@ const quizData = [
       options: [
         "A) It cannot have any non-abstract methods",
         "B) It can be instantiated directly",
-        "C) It can have both abstract and concrete methods",
+        "C) It can have both abstract and concrete methods", // ANS
         "D) It cannot have constructors"
       ],
       answer: 2
@@ -33,7 +33,7 @@ const quizData = [
       question: "4. Which of the following is an example of abstraction in real life?",
       options: [
         "A) Knowing how a car engine works in detail",
-        "B) Pressing the 'start' button to ignite a car without knowing the internal mechanics",
+        "B) Pressing the 'start' button to ignite a car without knowing the internal mechanics", // ANS
         "C) Repairing a smartphone's motherboard",
         "D) Writing code for a compiler"
       ],
@@ -43,7 +43,7 @@ const quizData = [
       question: "5. What happens if a subclass does not implement all abstract methods of its parent abstract class?",
       options: [
         "A) The subclass becomes abstract automatically",
-        "B) Compilation error",
+        "B) Compilation error", // ANS
         "C) Runtime error",
         "D) The program runs successfully"
       ],
@@ -64,7 +64,7 @@ const quizData = [
       }  
   }</pre>`,
       options: [
-        "A) Bark",
+        "A) Bark", // ANS
         "B) null",
         "C) Compilation error (missing @Override)",
         "D) Runtime error"
@@ -75,7 +75,7 @@ const quizData = [
       question: "7. Which concept is demonstrated when a subclass adds unique properties (e.g., degreeOfHazardousness) to a generalized superclass (e.g., Freight)?",
       options: [
         "A) Generalization",
-        "B) Specialization",
+        "B) Specialization", // ANS 
         "C) Encapsulation",
         "D) Polymorphism"
       ],
@@ -85,7 +85,7 @@ const quizData = [
       question: "8. How is an abstract method different from a regular method?",
       options: [
         "A) It has a body",
-        "B) It is declared with the abstract keyword and has no implementation",
+        "B) It is declared with the abstract keyword and has no implementation", // ANS
         "C) It can only be static",
         "D) It cannot be overridden"
       ],
@@ -96,7 +96,7 @@ const quizData = [
       options: [
         "A) private abstract void print();",
         "B) abstract final void print();",
-        "C) abstract void print();",
+        "C) abstract void print();", // ANS
         "D) static abstract void print();"
       ],
       answer: 2
