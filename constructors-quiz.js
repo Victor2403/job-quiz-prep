@@ -109,7 +109,7 @@ const quizData = [
   
   // Action buttons
   function returnToHome() {
-    window.location.href = "index.html"; // Update as needed
+    window.location.href = "index.html"; 
   }
   
   function takeAgain() {

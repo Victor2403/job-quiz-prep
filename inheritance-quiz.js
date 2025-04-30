@@ -1,6 +1,6 @@
 const quizData = [
     {
-      question: "What is the primary purpose of inheritance in Java?",
+      question: "1 What is the primary purpose of inheritance in Java?",
       options: [
         "To hide implementation details",
         "To achieve method overloading",
@@ -10,17 +10,17 @@ const quizData = [
       answer: 2
     },
     {
-      question: "Which keyword is used to implement inheritance in Java?",
+      question: "2 Which keyword is used to implement inheritance in Java?",
       options: ["implements", "extends", "inherits", "super"],
       answer: 1
     },
     {
-      question: "In Java, which type of inheritance is NOT supported through classes?",
+      question: "3 In Java, which type of inheritance is NOT supported through classes?",
       options: ["Single inheritance", "Multilevel inheritance", "Multiple inheritance", "Hierarchical inheritance"],
       answer: 2
     },
     {
-      question: "What is the output of the following code?\n\nclass Animal {\n  void eat() { System.out.println(\"eating...\"); }\n}\nclass Dog extends Animal {\n  void bark() { System.out.println(\"barking...\"); }\n}\nclass Test {\n  public static void main(String[] args) {\n    Dog d = new Dog();\n    d.eat();\n    d.bark();\n  }\n}",
+      question: "4 What is the output of the following code?\n\nclass Animal {\n  void eat() { System.out.println(\"eating...\"); }\n}\nclass Dog extends Animal {\n  void bark() { System.out.println(\"barking...\"); }\n}\nclass Test {\n  public static void main(String[] args) {\n    Dog d = new Dog();\n    d.eat();\n    d.bark();\n  }\n}",
       options: [
         "eating... followed by barking...",
         "Compilation error",
@@ -30,7 +30,7 @@ const quizData = [
       answer: 0
     },
     {
-      question: "Why does Java not support multiple inheritance with classes?",
+      question: "5 Why does Java not support multiple inheritance with classes?",
       options: [
         "It makes the language slower",
         "It leads to ambiguity in method calls (the \"Diamond Problem\")",
@@ -40,12 +40,12 @@ const quizData = [
       answer: 1
     },
     {
-      question: "In multilevel inheritance, if BabyDog extends Dog, and Dog extends Animal, which class is the superclass of Dog?",
+      question: "6 In multilevel inheritance, if BabyDog extends Dog, and Dog extends Animal, which class is the superclass of Dog?",
       options: ["BabyDog", "Animal", "Object", "Both Animal and Object"],
       answer: 1
     },
     {
-      question: "Which of the following is an example of hierarchical inheritance?",
+      question: "7 Which of the following is an example of hierarchical inheritance?",
       options: [
         "A class Car extending Vehicle, and Bike also extending Vehicle", // ANS
         "A class Car extending Vehicle, and SportsCar extending Car",
@@ -55,7 +55,7 @@ const quizData = [
       answer: 0
     },
     {
-      question: "What will happen if you try to compile the following code?\n\nclass A { void show() { System.out.println(\"A\"); } }\nclass B { void show() { System.out.println(\"B\"); } }\nclass C extends A, B {\n  public static void main(String[] args) {\n    C obj = new C();\n    obj.show();\n  }\n}",
+      question: "8 What will happen if you try to compile the following code?\n\nclass A { void show() { System.out.println(\"A\"); } }\nclass B { void show() { System.out.println(\"B\"); } }\nclass C extends A, B {\n  public static void main(String[] args) {\n    C obj = new C();\n    obj.show();\n  }\n}",
       options: [
         "It prints \"A\"",
         "It prints \"B\"",

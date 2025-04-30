@@ -106,8 +106,7 @@ const quizData = [
 let currentQuiz = 0;
 let score = 0;
 
-// ============== DO NOT MODIFY BELOW THIS LINE ==============
-// (This ensures all quizzes behave identically)
+// ============== Wrapper Func ==============
 
 function startQuiz() {
     document.getElementById("results").classList.add("hidden");

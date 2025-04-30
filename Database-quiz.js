@@ -3,7 +3,7 @@ const quizData = [
         question: "1. What is the primary purpose of a primary key in a database table?",
         options: [
             "A) To store large binary data",
-            "B) To uniquely identify each row in a table",
+            "B) To uniquely identify each row in a table", // ANS
             "C) To link two tables together",
             "D) To improve query performance"
         ],
@@ -13,7 +13,7 @@ const quizData = [
         question: "2. Which SQL statement is used to retrieve data from a database?",
         options: [
             "A) UPDATE",
-            "B) SELECT",
+            "B) SELECT", // ANS
             "C) INSERT",
             "D) DELETE"
         ],
@@ -22,7 +22,7 @@ const quizData = [
     {
         question: "3. What is the correct syntax for creating a foreign key in SQL?",
         options: [
-            "A) ALTER TABLE Orders ADD FOREIGN KEY (Customer_ID) REFERENCES Customers(ID);",
+            "A) ALTER TABLE Orders ADD FOREIGN KEY (Customer_ID) REFERENCES Customers(ID);", // ANS
             "B) CREATE FOREIGN KEY Orders(Customer_ID) ON Customers(ID);",
             "C) SET FOREIGN KEY Orders(Customer_ID) = Customers(ID);",
             "D) ADD CONSTRAINT Orders FOREIGN KEY (Customer_ID) REFERENCES Customers(ID);"
@@ -33,7 +33,7 @@ const quizData = [
         question: "4. Which type of SQL JOIN returns all records from the left table and matching records from the right table?",
         options: [
             "A) INNER JOIN",
-            "B) LEFT JOIN",
+            "B) LEFT JOIN", // ANS
             "C) RIGHT JOIN",
             "D) FULL JOIN"
         ],
@@ -43,7 +43,7 @@ const quizData = [
         question: "5. What does the WHERE clause do in an SQL query?",
         options: [
             "A) Specifies the columns to retrieve",
-            "B) Filters records based on a condition",
+            "B) Filters records based on a condition", // ANS
             "C) Sorts the results",
             "D) Groups records by a column"
         ],
@@ -54,7 +54,7 @@ const quizData = [
         options: [
             "A) SELECT",
             "B) INSERT",
-            "C) CREATE",
+            "C) CREATE", // ANS
             "D) UPDATE"
         ],
         answer: 2
@@ -63,7 +63,7 @@ const quizData = [
         question: "7. What is the purpose of a foreign key?",
         options: [
             "A) To ensure data uniqueness in a single table",
-            "B) To establish a relationship between two tables",
+            "B) To establish a relationship between two tables", // ANS
             "C) To automatically delete records when referenced data is removed",
             "D) To encrypt sensitive data"
         ],
@@ -73,7 +73,7 @@ const quizData = [
         question: "8. Which SQL statement is used to modify existing data in a table?",
         options: [
             "A) ALTER",
-            "B) UPDATE",
+            "B) UPDATE", // ANS
             "C) CHANGE",
             "D) MODIFY"
         ],
@@ -82,7 +82,7 @@ const quizData = [
     {
         question: "9. What is the difference between DELETE and TRUNCATE?",
         options: [
-            "A) DELETE removes specific rows, while TRUNCATE removes all rows and resets the table",
+            "A) DELETE removes specific rows, while TRUNCATE removes all rows and resets the table", // ANS
             "B) DELETE is faster than TRUNCATE",
             "C) TRUNCATE can be rolled back, but DELETE cannot",
             "D) DELETE is a DDL command, while TRUNCATE is DML"
@@ -93,7 +93,7 @@ const quizData = [
         question: "10. Which SQL clause is used to sort the results of a query?",
         options: [
             "A) GROUP BY",
-            "B) ORDER BY",
+            "B) ORDER BY", // ANS
             "C) SORT BY",
             "D) HAVING"
         ],
@@ -103,7 +103,7 @@ const quizData = [
         question: "11. What does the GROUP BY clause do?",
         options: [
             "A) Filters groups based on a condition",
-            "B) Combines rows into groups based on column values",
+            "B) Combines rows into groups based on column values", // ANS
             "C) Orders the results in ascending or descending order",
             "D) Joins multiple tables together"
         ],
