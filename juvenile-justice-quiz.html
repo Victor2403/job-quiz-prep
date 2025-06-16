@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvenile Justice Quiz</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #f39c12;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .quiz-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .question {
+            margin-bottom: 25px;
+        }
+        
+        .question h2 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .options {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .option-btn {
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .option-btn:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .matching-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .match-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .match-item .term {
+            font-weight: bold;
+            color: var(--dark);
+        }
+        
+        .match-select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 2px solid #ddd;
+            width: 60%;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background: #2980b9;
+        }
+        
+        .results {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .results h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .score {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .action-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .retake-btn {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .retake-btn:hover {
+            background: #e67e22;
+        }
+        
+        .home-btn {
+            background: var(--light);
+            color: var(--dark);
+        }
+        
+        .home-btn:hover {
+            background: #d5dbdb;
+        }
+        
+        @media (max-width: 600px) {
+            .match-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .match-select {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Juvenile Justice Quiz</h1>
+            <p>Test your knowledge of delinquency, gangs, and the juvenile justice system</p>
+        </header>
+        
+        <div id="quiz-container" class="quiz-section"></div>
+        
+        <div id="matching-container" class="matching-section"></div>
+        
+        <div id="results" class="results"></div>
+        
+        <div id="actions" class="actions">
+            <button onclick="takeAgain()" class="action-btn retake-btn">Take Again</button>
+            <button onclick="returnToHome()" class="action-btn home-btn">Return Home</button>
+        </div>
+    </div>
+
+    <script src="juvenile-justice-quiz.js"></script>
+</body>
+</html>
