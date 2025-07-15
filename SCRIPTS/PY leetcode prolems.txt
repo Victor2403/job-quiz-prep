@@ -1,0 +1,123 @@
+=======================================================
+# Anagram 
+=======================================================
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):            # Anagrams must be the same length
+            return False
+
+        countS, countT = {}, {}         # Initialize two dictionaries to count letters in each string
+
+        for i in range(len(s)):         # Loop through each index in the strings
+            countS[s[i]] = 1 + countS.get(s[i], 0)  # Increment count of char in s
+            countT[t[i]] = 1 + countT.get(t[i], 0)  # Increment count of char in t
+
+        for c in countS:                # Check each character in countS
+            if countS[c] != countT.get(c, 0):  # If frequency doesn’t match, not an anagram
+                return False
+
+        return True                     # All counts matched → it's an anagram
+
+#✅ Why it works: Counts character frequencies in both strings and ensures they're the same. Fast and reliable for short strings.
+
+
+=======================================================
+# Palindrome Number
+=======================================================
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0: return False              # Negative numbers are never palindromes
+
+        div = 1
+        while x >= 10 * div:                # Find the divisor for the leftmost digit
+            div *= 10
+
+        while x:
+            right = x % 10                  # Get rightmost digit
+            left = x // div                 # Get leftmost digit
+
+            if left != right: return False  # If mismatch → not a palindrome
+
+            x = (x % div) // 10             # Remove left and right digits
+            div = div / 100                 # Shrink divisor by 2 digits
+
+        return True
+
+# ✅ Why it works: Compares left and right digits without converting to a string — elegant math-based solution.
+
+
+=======================================================
+# Merge two Sorted Lists
+=======================================================
+
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        dummy = ListNode()                  # Dummy node to start the merged list
+        tail = dummy                        # Tail points to the last node in merged list
+
+        while l1 and l2:                    # While both lists have nodes
+            if l1.val < l2.val:
+                tail.next = l1              # Link smaller node
+                l1 = l1.next                # Advance list1
+            else:
+                tail.next = l2              # Link smaller node
+                l2 = l2.next                # Advance list2
+            tail = tail.next                # Move tail forward
+
+        if l1:                              # Append remaining nodes from l1 if any
+            tail.next = l1
+        elif l2:                            # Append remaining nodes from l2 if any
+            tail.next = l2
+
+        return dummy.next                   # Return head of merged list
+
+# ✅ Why it works: It builds a new merged list by comparing nodes one at a time, keeping the list sorted.
+
+
+=======================================================
+# Contains Duplicate (Sliding Window)
+=======================================================
+
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        window = set()                      # Set to store recent elements within the window
+        L = 0                               # Left boundary of the sliding window
+
+        for R in range(len(nums)):          # R is the right boundary (current index)
+            if R - L > k:                   # Shrink the window if it’s bigger than k
+                window.remove(nums[L])      # Remove the leftmost element
+                L += 1
+
+            if nums[R] in window:           # If current number is already in the window
+                return True                 # Found a duplicate within range k
+
+            window.add(nums[R])             # Add current number to the window
+
+        return False                        # No nearby duplicate found
+
+# ✅ Why it works: Uses a sliding window of size k to track if any number repeats within that window.
+
+
+=======================================================
+# Best time to buy and sell stock
+=======================================================
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        l, r = 0, 1                         # l is the buy day, r is the sell day
+        maxP = 0                            # Track maximum profit
+
+        while r < len(prices):
+            if prices[l] < prices[r]:       # If profitable (buy low, sell high)
+                profit = prices[r] - prices[l]
+                maxP = max(maxP, profit)    # Update max profit if better
+            else:
+                l = r                       # Reset buy day to current if not profitable
+
+            r += 1                          # Move sell day forward
+
+        return maxP
+
+# ✅ Why it works: Uses two pointers to scan the price list for the best buy/sell pair in one pass (O(n)).

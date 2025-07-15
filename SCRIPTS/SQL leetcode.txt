@@ -1,12 +1,65 @@
-Second Highest Salary 
-
+=======================================================
+Second Highest Salary
+=======================================================
+-- Select the second highest salary from the Employee table.
 SELECT 
-    IFNULL(
-        (SELECT Distinct Salary
-        FROM Employee
-        ORDER BY Salary Desc
-        LIMIT 1 OFFSET 1),
-        NULL
-    ) as SecondHighestSalary
+    IFNULL(                             -- Use IFNULL to return NULL if the subquery returns no result.
+        (SELECT DISTINCT Salary         -- Select distinct salary values to avoid duplicates.
+         FROM Employee                  -- From the Employee table.
+         ORDER BY Salary DESC           -- Order salaries from highest to lowest.
+         LIMIT 1 OFFSET 1),             -- Skip the first (highest) salary, and return the second one.
+        NULL                            -- If no second salary exists, return NULL.
+    ) AS SecondHighestSalary;          -- Label the output column as 'SecondHighestSalary'.
+
+-- ✅ This solution works because it sorts salaries and picks the second one using OFFSET. If there's no second salary, it returns NULL.
 
 =======================================================
+Employees Earning More Than Their Managers
+=======================================================
+-- Select the names of employees who earn more than their managers.
+SELECT e1.Name AS Employee             -- Select the employee's name and alias the column as 'Employee'.
+FROM Employee e1                       -- Use alias e1 for the Employee table representing the employee.
+LEFT JOIN Employee e2                  -- Join again to the Employee table using alias e2 representing the manager.
+    ON e2.Id = e1.ManagerId            -- Match each employee with their manager by managerId.
+WHERE e2.Salary < e1.Salary;          -- Only include rows where the employee earns more than their manager.
+
+-- ✅ This solution joins each employee with their manager and filters those earning more than their manager.
+
+=======================================================
+Department Top 3 Salaries
+=======================================================
+-- Select top 3 salaries in each department along with employee and department names.
+SELECT D.Name AS Department,          -- Output the department name with alias 'Department'.
+       E1.Name AS Employee,           -- Output the employee's name with alias 'Employee'.
+       E1.Salary AS Salary            -- Output the employee's salary.
+
+FROM Employee AS E1,                  -- Use E1 as alias for the Employee table.
+     Department AS D                  -- Use D as alias for the Department table.
+
+WHERE (
+    SELECT COUNT(DISTINCT E2.Salary)  -- Count how many DISTINCT salaries are higher than the current one.
+    FROM Employee AS E2               -- Subquery on the Employee table with alias E2.
+    WHERE E1.DepartmentId = E2.DepartmentId  -- Ensure we only compare within the same department.
+          AND E2.Salary > E1.Salary         -- Only consider salaries higher than the current employee.
+) < 3                                -- Include salaries that are among the top 3 (0 higher = 1st, 1 higher = 2nd, 2 higher = 3rd).
+
+AND E1.DepartmentId = D.Id;         -- Join Employee with Department by department ID.
+
+-- ✅ This solution works by counting how many people in the same department earn more, and includes only the top 3.
+
+=======================================================
+Rank Scores
+=======================================================
+-- Rank scores based on descending order with ties given the same rank.
+SELECT Score,                        -- Select the score column.
+       (
+         SELECT COUNT(DISTINCT s2.Score) -- Count how many unique scores are greater than or equal to this one.
+         FROM Scores s2                 -- Inner subquery with alias s2.
+         WHERE s2.Score >= s1.Score     -- Compare scores to assign rank.
+       ) AS Rank                     -- Output the result as the 'Rank'.
+
+FROM Scores s1                       -- Main query with alias s1 to compare each score.
+
+ORDER BY s1.Score DESC;              -- Order final output by score in descending order.
+
+-- ✅ This solution assigns ranks by counting how many distinct scores are greater or equal to each one, resulting in dense ranks.
